@@ -1,11 +1,11 @@
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", function () {
     const form = document.getElementById("registration-form");
     const feedbackDiv = document.getElementById("form-feedback");
 
-    form.addEventListener("submit", (event) => {
+    form.addEventListener("submit", function (event) {
         event.preventDefault();
 
-        // Get values and trim whitespace
+        // Retrieve and trim input values
         const username = document.getElementById("username").value.trim();
         const email = document.getElementById("email").value.trim();
         const password = document.getElementById("password").value.trim();
@@ -36,11 +36,9 @@ document.addEventListener("DOMContentLoaded", () => {
         if (isValid) {
             feedbackDiv.textContent = "Registration successful!";
             feedbackDiv.style.color = "#28a745"; // green success
-            feedbackDiv.style.backgroundColor = "#d4edda";
         } else {
             feedbackDiv.innerHTML = messages.join("<br>");
             feedbackDiv.style.color = "#dc3545"; // red error
-            feedbackDiv.style.backgroundColor = "#f8d7da";
         }
     });
 });
